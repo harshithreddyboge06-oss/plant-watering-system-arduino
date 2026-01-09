@@ -22,6 +22,36 @@ This project was built as a foundational hands-on exercise to understand sensor 
 
 ---
 
+
+
+```mermaid
+graph TD
+    %% Nodes
+    Arduino[Arduino UNO]
+    Sensor[Soil Moisture Sensor]
+    Relay[5V Relay Module]
+    Pump[DC Water Pump]
+    Bat[9V Battery]
+    Plant[Pothos Plant]
+
+    %% Power Connections
+    Arduino -- 5V --> Sensor
+    Arduino -- 5V --> Relay
+    Bat -- Positive --> Relay
+    
+    %% Signal Connections
+    Sensor -- Analog Data --> Arduino
+    Arduino -- Digital Signal --> Relay
+    
+    %% High Power Circuit
+    Relay -- Switched Power --> Pump
+    Bat -- Negative --> Pump
+    
+    %% Physical Actions
+    Pump -- Water Tubing --> Plant
+    Sensor -- Inserted In --> Plant  '''
+
+
 ## ⚙️ Working Principle
 
 The system operates on a **closed-loop feedback mechanism**:
@@ -85,6 +115,13 @@ Pump ON      Pump OFF
 * Threshold values may vary depending on soil type and environmental conditions.
 
 ---
+
+## 📜 How to Run
+1. Clone this repository.
+2. Connect the hardware according to the component list above.
+3. Open the `.ino` file in the **Arduino IDE**.
+4. Select **Arduino UNO** under Tools > Board.
+5. Click **Upload** to run the code on your device.
 
 ## ✨ Features
 
