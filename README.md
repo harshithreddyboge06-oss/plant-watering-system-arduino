@@ -65,7 +65,7 @@ graph TD
     Pump -- Water --> Plant
     Sensor -- Inserted In --> Soil
     Soil -- Moisture Level --> Sensor
----
+
 
 ## 🧠 Logic Flow
 
