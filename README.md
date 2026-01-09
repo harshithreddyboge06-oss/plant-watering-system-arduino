@@ -40,6 +40,8 @@ The system operates on a **closed-loop feedback mechanism**:
 
 ## 🧠 System Architecture Diagram
 
+mermaid
+
 graph TD
     Arduino[Arduino UNO]
     Sensor[Soil Moisture Sensor]
