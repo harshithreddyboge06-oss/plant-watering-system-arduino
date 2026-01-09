@@ -163,13 +163,4 @@ Easy to extend
 Results
 The pump activates only when soil moisture drops below the threshold, ensuring optimized water usage.
 
-Future Enhancements
-IoT integration using ESP32
-Mobile or web-based monitoring
-Temperature and humidity sensing
-LCD display
-Solar-powered operation
-
-Conclusion
-This project helped develop a practical understanding of Arduino-based automation and serves as a foundation for future embedded systems and IoT projects.
 
