@@ -37,6 +37,34 @@ The system operates on a **closed-loop feedback mechanism**:
    * **Wet Soil (value < threshold):** Relay OFF → Water Pump OFF
 5. The process runs continuously to maintain optimal soil moisture.
 
+
+## 🧠 System Architecture Diagram
+
+```mermaid
+graph TD
+    Arduino[Arduino UNO]
+    Sensor[Soil Moisture Sensor]
+    Relay[5V Relay Module]
+    Pump[DC Water Pump]
+    Bat[9V Battery]
+    Plant[Pothos Plant]
+    Soil[Soil]
+
+    Arduino -- 5V --> Sensor
+    Arduino -- 5V --> Relay
+    Arduino -- GND --> Sensor
+    Arduino -- GND --> Relay
+
+    Sensor -- Analog Signal (A0) --> Arduino
+    Arduino -- Digital Control --> Relay
+
+    Bat -- Positive --> Relay
+    Relay -- Switched Power --> Pump
+    Bat -- Negative --> Pump
+
+    Pump -- Water --> Plant
+    Sensor -- Inserted In --> Soil
+    Soil -- Moisture Level --> Sensor
 ---
 
 ## 🧠 Logic Flow
