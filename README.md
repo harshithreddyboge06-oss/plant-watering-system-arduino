@@ -40,32 +40,13 @@ The system operates on a **closed-loop feedback mechanism**:
 
 ## 🧠 System Architecture Diagram
 
-mermaid
-
+```mermaid
 graph TD
-    Arduino[Arduino UNO]
-    Sensor[Soil Moisture Sensor]
-    Relay[5V Relay Module]
-    Pump[DC Water Pump]
-    Bat[External Power Supply]
-    Plant[Plant]
-    Soil[Soil]
-
-    Arduino -- 5V --> Sensor
-    Arduino -- GND --> Sensor
-    Sensor -- Analog (A0) --> Arduino
-
-    Arduino -- Digital Control --> Relay
-    Arduino -- 5V --> Relay
-    Arduino -- GND --> Relay
-
-    Bat -- Power --> Relay
-    Relay -- Switched Power --> Pump
-
-    Pump -- Water --> Plant
-    Sensor -- Inserted In --> Soil
-    Soil -- Moisture Level --> Sensor
-
+    Arduino --> Sensor
+    Sensor --> Arduino
+    Arduino --> Relay
+    Relay --> Pump
+    Pump --> Plant
 
 ## 🧠 Logic Flow
 
